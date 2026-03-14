@@ -73,9 +73,9 @@ nav{position:fixed;top:0;width:100%;z-index:1000;padding:16px 40px;display:flex;
 /* ── PHOTO STRIP ── */
 #gallery{background:var(--deep);padding:80px 0;}
 .gallery-label{text-align:center;padding:0 0 40px;}
-.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
 .gallery-item{position:relative;overflow:hidden;aspect-ratio:1;}
-.gallery-item img{width:100%;height:100%;object-fit:cover;filter:brightness(0.8) saturate(0.85);transition:all 0.5s;}
+.gallery-item img{width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(0.85) saturate(0.9);transition:all 0.5s;}
 .gallery-item:hover img{filter:brightness(1) saturate(1.1);transform:scale(1.06);}
 .gallery-cap{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.8) 0%,transparent 55%);display:flex;align-items:flex-end;padding:18px;opacity:0;transition:opacity 0.4s;}
 .gallery-item:hover .gallery-cap{opacity:1;}
@@ -88,7 +88,7 @@ nav{position:fixed;top:0;width:100%;z-index:1000;padding:16px 40px;display:flex;
 .dest-card{border-radius:20px;overflow:hidden;position:relative;cursor:pointer;aspect-ratio:3/4;transition:transform 0.4s;}
 .dest-card.wide{grid-column:span 2;aspect-ratio:auto;min-height:280px;}
 .dest-card:hover{transform:scale(1.02);}
-.dest-bg{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform 0.6s;filter:brightness(0.72);}
+.dest-bg{width:100%;height:100%;object-fit:cover;object-position:center;position:absolute;inset:0;transition:transform 0.6s;filter:brightness(0.72);}
 .dest-card:hover .dest-bg{transform:scale(1.07);}
 .dest-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.88) 0%,transparent 60%);display:flex;flex-direction:column;justify-content:flex-end;padding:26px;}
 .dest-tag{display:inline-block;background:var(--gold);color:var(--deep);padding:4px 12px;border-radius:20px;font-size:0.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;width:fit-content;}
@@ -520,7 +520,7 @@ nav.scrolled{background:rgba(10,10,26,0.97)!important;}
     </div>
   </div>
   <div style="text-align:center;margin-top:10px;" class="reveal">
-    <p style="font-size:0.85rem;color:rgba(255,255,255,0.45);font-style:italic;">💡 Click any card to celebrate with fireworks!</p>
+    <p style="font-size:0.85rem;color:rgba(255,255,255,0.45);font-style:italic;">💡 Click any card for fireworks · Double-click anywhere on the page for a big celebration!</p>
   </div>
 </section>
 
@@ -529,109 +529,109 @@ nav.scrolled{background:rgba(10,10,26,0.97)!important;}
   <div class="quiz-wrap">
     <div class="reveal">
       <div class="sec-label" style="color:var(--magic-purple)">✦ Discover Your Match</div>
-      <h2 class="sec-title" style="color:var(--deep)">What's Your Travel<br><em style="color:var(--magic-purple)">Personality?</em></h2>
+      <h2 class="sec-title" style="color:var(--deep)">What's Your Travel<br><em style="color:var(--magic-purple)">Destination Match?</em></h2>
       <div class="gold-line" style="background:linear-gradient(to right,var(--magic-purple),transparent)"></div>
-      <p style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;color:rgba(10,10,26,0.55);max-width:580px;line-height:1.75;">Answer 9 questions and discover which Disney character matches your travel soul — plus your perfect destination, curated by Charissa &amp; Tatiana just for you.</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;color:rgba(10,10,26,0.55);max-width:580px;line-height:1.75;">Answer 9 quick questions and Charissa &amp; Tatiana will reveal your perfect vacation destination — matched to your unique travel personality.</p>
     </div>
     <div class="quiz-box reveal d1">
       <div class="qprog"><div class="qprog-bar" id="qprogBar"></div></div>
 
       <div class="qstep active" data-step="1">
-        <div class="q-title">What's your ideal Saturday morning? ☀️</div>
-        <div class="q-sub">No obligations, total freedom — what are you doing?</div>
+        <div class="q-title">Your passport is in hand — where do you head first? ✈️</div>
+        <div class="q-sub">Your first instinct reveals your travel soul</div>
         <div class="q-opts">
-          <button class="qopt" data-val="adventure" onclick="pickQ(this)"><em>🎢</em><div class="qopt-text"><strong>Up early for an adventure</strong><small>First in line, full throttle</small></div></button>
-          <button class="qopt" data-val="relax" onclick="pickQ(this)"><em>☕</em><div class="qopt-text"><strong>Slow morning with coffee</strong><small>Ease into the day peacefully</small></div></button>
-          <button class="qopt" data-val="explore" onclick="pickQ(this)"><em>🗺️</em><div class="qopt-text"><strong>Explore somewhere new</strong><small>Get lost, discover things</small></div></button>
-          <button class="qopt" data-val="family" onclick="pickQ(this)"><em>🏡</em><div class="qopt-text"><strong>Quality time with loved ones</strong><small>Connection is everything</small></div></button>
+          <button class="qopt" data-val="magic" onclick="pickQ(this)"><em>🏰</em><div class="qopt-text"><strong>A world-famous theme park</strong><small>Magic, wonder & memories</small></div></button>
+          <button class="qopt" data-val="relax" onclick="pickQ(this)"><em>🏖️</em><div class="qopt-text"><strong>A private beach resort</strong><small>Sun, sand & zero stress</small></div></button>
+          <button class="qopt" data-val="adventure" onclick="pickQ(this)"><em>🚢</em><div class="qopt-text"><strong>A cruise ship setting sail</strong><small>New ports every single day</small></div></button>
+          <button class="qopt" data-val="explore" onclick="pickQ(this)"><em>🌍</em><div class="qopt-text"><strong>A far-off exotic country</strong><small>Culture, history & discovery</small></div></button>
         </div>
       </div>
 
       <div class="qstep" data-step="2">
-        <div class="q-title">You spot a 4-hour wait for a ride. You... 🎡</div>
-        <div class="q-sub">Your gut reaction says a lot about you</div>
+        <div class="q-title">You've just landed. What's the first thing you do? 🌅</div>
+        <div class="q-sub">Your arrival energy tells us everything</div>
         <div class="q-opts">
-          <button class="qopt" data-val="adventure" onclick="pickQ(this)"><em>😤</em><div class="qopt-text"><strong>Get in line — worth it!</strong><small>No ride is off limits</small></div></button>
-          <button class="qopt" data-val="relax" onclick="pickQ(this)"><em>🛍️</em><div class="qopt-text"><strong>Skip it, enjoy the atmosphere</strong><small>The journey is the destination</small></div></button>
-          <button class="qopt" data-val="magic" onclick="pickQ(this)"><em>📱</em><div class="qopt-text"><strong>Lightning Lane it — I'm strategic</strong><small>Work smarter, not harder</small></div></button>
-          <button class="qopt" data-val="explore" onclick="pickQ(this)"><em>🍦</em><div class="qopt-text"><strong>Find snacks and explore</strong><small>Adventure awaits elsewhere</small></div></button>
+          <button class="qopt" data-val="magic" onclick="pickQ(this)"><em>📸</em><div class="qopt-text"><strong>Snap photos of every magical detail</strong><small>Capture it all immediately</small></div></button>
+          <button class="qopt" data-val="relax" onclick="pickQ(this)"><em>🛁</em><div class="qopt-text"><strong>Freshen up & order room service</strong><small>Ease in, no rush</small></div></button>
+          <button class="qopt" data-val="adventure" onclick="pickQ(this)"><em>🗺️</em><div class="qopt-text"><strong>Pull up the itinerary & go</strong><small>Every minute counts!</small></div></button>
+          <button class="qopt" data-val="explore" onclick="pickQ(this)"><em>🚶</em><div class="qopt-text"><strong>Wander with no plan at all</strong><small>Best finds are unplanned</small></div></button>
         </div>
       </div>
 
       <div class="qstep" data-step="3">
-        <div class="q-title">Your dream vacation feeling is... 🌅</div>
-        <div class="q-sub">Close your eyes — what feeling do you want?</div>
+        <div class="q-title">Your perfect vacation view looks like... 🌄</div>
+        <div class="q-sub">Close your eyes — what do you see outside the window?</div>
         <div class="q-opts">
-          <button class="qopt" data-val="magic" onclick="pickQ(this)"><em>🏰</em><div class="qopt-text"><strong>Pure enchantment & wonder</strong><small>Fairytale moments</small></div></button>
-          <button class="qopt" data-val="relax" onclick="pickQ(this)"><em>🌊</em><div class="qopt-text"><strong>Total peace & relaxation</strong><small>Unplug and recharge</small></div></button>
-          <button class="qopt" data-val="adventure" onclick="pickQ(this)"><em>🔥</em><div class="qopt-text"><strong>Heart-pounding excitement</strong><small>Adrenaline & thrills</small></div></button>
-          <button class="qopt" data-val="explore" onclick="pickQ(this)"><em>🌍</em><div class="qopt-text"><strong>Discovery & culture</strong><small>Expand your world</small></div></button>
+          <button class="qopt" data-val="magic" onclick="pickQ(this)"><em>🎆</em><div class="qopt-text"><strong>Fireworks over a castle at night</strong><small>Pure enchantment</small></div></button>
+          <button class="qopt" data-val="relax" onclick="pickQ(this)"><em>🌊</em><div class="qopt-text"><strong>Crystal-clear Caribbean water</strong><small>Total peace & beauty</small></div></button>
+          <button class="qopt" data-val="adventure" onclick="pickQ(this)"><em>🌅</em><div class="qopt-text"><strong>Ocean horizon from a ship deck</strong><small>Freedom & possibility</small></div></button>
+          <button class="qopt" data-val="explore" onclick="pickQ(this)"><em>🏔️</em><div class="qopt-text"><strong>Ancient ruins or jungle canopy</strong><small>History & wonder</small></div></button>
         </div>
       </div>
 
       <div class="qstep" data-step="4">
-        <div class="q-title">You're booking a room. Which do you pick? 🛏️</div>
-        <div class="q-sub">Your accommodation preference reveals your soul</div>
+        <div class="q-title">Pick your dream accommodation 🛏️</div>
+        <div class="q-sub">Where you sleep says a lot about how you travel</div>
         <div class="q-opts">
-          <button class="qopt" data-val="magic" onclick="pickQ(this)"><em>🏰</em><div class="qopt-text"><strong>Themed Disney resort</strong><small>Immersed in the story</small></div></button>
-          <button class="qopt" data-val="relax" onclick="pickQ(this)"><em>🛖</em><div class="qopt-text"><strong>Overwater bungalow</strong><small>Ocean beneath my feet</small></div></button>
-          <button class="qopt" data-val="adventure" onclick="pickQ(this)"><em>🚢</em><div class="qopt-text"><strong>Cruise ship stateroom</strong><small>Wake up in a new place daily</small></div></button>
-          <button class="qopt" data-val="explore" onclick="pickQ(this)"><em>🌿</em><div class="qopt-text"><strong>Eco-luxury jungle villa</strong><small>Surrounded by nature</small></div></button>
+          <button class="qopt" data-val="magic" onclick="pickQ(this)"><em>🏰</em><div class="qopt-text"><strong>Immersive themed Disney resort</strong><small>The story surrounds you</small></div></button>
+          <button class="qopt" data-val="relax" onclick="pickQ(this)"><em>🛖</em><div class="qopt-text"><strong>Overwater bungalow, all-inclusive</strong><small>Ocean beneath your feet</small></div></button>
+          <button class="qopt" data-val="adventure" onclick="pickQ(this)"><em>🚢</em><div class="qopt-text"><strong>Cruise ship balcony stateroom</strong><small>Wake up somewhere new daily</small></div></button>
+          <button class="qopt" data-val="explore" onclick="pickQ(this)"><em>🌿</em><div class="qopt-text"><strong>Boutique eco-lodge in nature</strong><small>Immersed in the landscape</small></div></button>
         </div>
       </div>
 
       <div class="qstep" data-step="5">
-        <div class="q-title">Who's the ideal travel companion? 💫</div>
-        <div class="q-sub">Your travel crew matters</div>
+        <div class="q-title">Who's joining you on this trip? 💫</div>
+        <div class="q-sub">Your crew shapes the whole experience</div>
         <div class="q-opts">
-          <button class="qopt" data-val="family" onclick="pickQ(this)"><em>👨‍👩‍👧</em><div class="qopt-text"><strong>My whole family</strong><small>The more memories the merrier</small></div></button>
-          <button class="qopt" data-val="relax" onclick="pickQ(this)"><em>💑</em><div class="qopt-text"><strong>My partner, just us two</strong><small>Romance & connection</small></div></button>
-          <button class="qopt" data-val="adventure" onclick="pickQ(this)"><em>👯</em><div class="qopt-text"><strong>My best friends</strong><small>Squad vibes all day</small></div></button>
-          <button class="qopt" data-val="explore" onclick="pickQ(this)"><em>🧍</em><div class="qopt-text"><strong>Solo — just me!</strong><small>Total freedom</small></div></button>
+          <button class="qopt" data-val="family" onclick="pickQ(this)"><em>👨‍👩‍👧</em><div class="qopt-text"><strong>The whole family — kids included</strong><small>More people, more magic</small></div></button>
+          <button class="qopt" data-val="relax" onclick="pickQ(this)"><em>💑</em><div class="qopt-text"><strong>My partner — just the two of us</strong><small>Romance & reconnection</small></div></button>
+          <button class="qopt" data-val="adventure" onclick="pickQ(this)"><em>👯</em><div class="qopt-text"><strong>My best friends — squad trip!</strong><small>Memories & chaos</small></div></button>
+          <button class="qopt" data-val="explore" onclick="pickQ(this)"><em>🧍</em><div class="qopt-text"><strong>Just me — solo adventure</strong><small>Total freedom, my pace</small></div></button>
         </div>
       </div>
 
       <div class="qstep" data-step="6">
-        <div class="q-title">Your ideal vacation meal is... 🍽️</div>
-        <div class="q-sub">Food is part of the magic too!</div>
+        <div class="q-title">How do you like to spend your vacation evenings? 🌙</div>
+        <div class="q-sub">The nights are just as important as the days</div>
         <div class="q-opts">
-          <button class="qopt" data-val="magic" onclick="pickQ(this)"><em>🍽️</em><div class="qopt-text"><strong>Signature Disney dining</strong><small>Character meals, castle dining</small></div></button>
-          <button class="qopt" data-val="relax" onclick="pickQ(this)"><em>🦞</em><div class="qopt-text"><strong>Gourmet all-inclusive feast</strong><small>Everything included, no limits</small></div></button>
-          <button class="qopt" data-val="adventure" onclick="pickQ(this)"><em>🍣</em><div class="qopt-text"><strong>International street food</strong><small>Eat like a local, everywhere</small></div></button>
-          <button class="qopt" data-val="explore" onclick="pickQ(this)"><em>🌮</em><div class="qopt-text"><strong>Local hidden gems</strong><small>Discovery through food</small></div></button>
+          <button class="qopt" data-val="magic" onclick="pickQ(this)"><em>🎇</em><div class="qopt-text"><strong>Fireworks, shows & parades</strong><small>The grand finale every night</small></div></button>
+          <button class="qopt" data-val="relax" onclick="pickQ(this)"><em>🍷</em><div class="qopt-text"><strong>Gourmet dinner & stargazing</strong><small>Slow, indulgent evenings</small></div></button>
+          <button class="qopt" data-val="adventure" onclick="pickQ(this)"><em>🎉</em><div class="qopt-text"><strong>Deck parties & live entertainment</strong><small>The night is young</small></div></button>
+          <button class="qopt" data-val="explore" onclick="pickQ(this)"><em>🏮</em><div class="qopt-text"><strong>Local night markets & culture</strong><small>Discover after dark</small></div></button>
         </div>
       </div>
 
       <div class="qstep" data-step="7">
-        <div class="q-title">What's your budget style? 💰</div>
-        <div class="q-sub">Let's make sure your dream fits your reality</div>
+        <div class="q-title">What's your travel budget style? 💰</div>
+        <div class="q-sub">Let's find your perfect match at every price point</div>
         <div class="q-opts">
-          <button class="qopt" data-val="budget" onclick="pickQ(this)"><em>💵</em><div class="qopt-text"><strong>Smart & savvy</strong><small>Under $2,000 per person</small></div></button>
-          <button class="qopt" data-val="moderate" onclick="pickQ(this)"><em>💳</em><div class="qopt-text"><strong>Comfortable & fun</strong><small>$2,000 – $4,500 per person</small></div></button>
-          <button class="qopt" data-val="premium" onclick="pickQ(this)"><em>💎</em><div class="qopt-text"><strong>Premium experience</strong><small>$4,500 – $8,000 per person</small></div></button>
-          <button class="qopt" data-val="luxury" onclick="pickQ(this)"><em>👑</em><div class="qopt-text"><strong>Luxury — no limits</strong><small>$8,000+ per person</small></div></button>
+          <button class="qopt" data-val="budget" onclick="pickQ(this)"><em>💵</em><div class="qopt-text"><strong>Smart & savvy traveler</strong><small>Under $2,000 per person</small></div></button>
+          <button class="qopt" data-val="moderate" onclick="pickQ(this)"><em>💳</em><div class="qopt-text"><strong>Comfortable & memorable</strong><small>$2,000 – $4,500 per person</small></div></button>
+          <button class="qopt" data-val="premium" onclick="pickQ(this)"><em>💎</em><div class="qopt-text"><strong>Premium all the way</strong><small>$4,500 – $8,000 per person</small></div></button>
+          <button class="qopt" data-val="luxury" onclick="pickQ(this)"><em>👑</em><div class="qopt-text"><strong>Luxury — only the best</strong><small>$8,000+ per person</small></div></button>
         </div>
       </div>
 
       <div class="qstep" data-step="8">
-        <div class="q-title">When you arrive at a new place, you... 🌟</div>
-        <div class="q-sub">Your arrival energy says everything</div>
+        <div class="q-title">A surprise excursion pops up on your trip. You... 🤩</div>
+        <div class="q-sub">How spontaneous are you really?</div>
         <div class="q-opts">
-          <button class="qopt" data-val="magic" onclick="pickQ(this)"><em>📸</em><div class="qopt-text"><strong>Immediately start taking photos</strong><small>Capture every magical moment</small></div></button>
-          <button class="qopt" data-val="relax" onclick="pickQ(this)"><em>😮‍💨</em><div class="qopt-text"><strong>Drop your bags and breathe</strong><small>Take it all in slowly</small></div></button>
-          <button class="qopt" data-val="adventure" onclick="pickQ(this)"><em>🏃</em><div class="qopt-text"><strong>Go straight to the action</strong><small>No time to waste!</small></div></button>
-          <button class="qopt" data-val="explore" onclick="pickQ(this)"><em>🚶</em><div class="qopt-text"><strong>Wander and explore freely</strong><small>No plan is the best plan</small></div></button>
+          <button class="qopt" data-val="magic" onclick="pickQ(this)"><em>🎟️</em><div class="qopt-text"><strong>Book it if it's something magical</strong><small>Once-in-a-lifetime moments</small></div></button>
+          <button class="qopt" data-val="relax" onclick="pickQ(this)"><em>😌</em><div class="qopt-text"><strong>Skip it — I'm recharging today</strong><small>Rest is part of the vacation</small></div></button>
+          <button class="qopt" data-val="adventure" onclick="pickQ(this)"><em>🙋</em><div class="qopt-text"><strong>Sign me up immediately!</strong><small>Always say yes to adventure</small></div></button>
+          <button class="qopt" data-val="explore" onclick="pickQ(this)"><em>🤔</em><div class="qopt-text"><strong>Only if it's something I can't Google</strong><small>Authentic & unique wins</small></div></button>
         </div>
       </div>
 
       <div class="qstep" data-step="9">
-        <div class="q-title">Finally — what's your spirit emoji? ✨</div>
-        <div class="q-sub">Trust your instincts on this one!</div>
+        <div class="q-title">What does your dream trip feel like when you close your eyes? ✨</div>
+        <div class="q-sub">Trust your gut — your heart already knows</div>
         <div class="q-opts">
-          <button class="qopt" data-val="magic" onclick="pickQ(this)"><em>🏰</em><div class="qopt-text"><strong>🏰 The Castle</strong><small>Fairytale believer</small></div></button>
-          <button class="qopt" data-val="relax" onclick="pickQ(this)"><em>🌴</em><div class="qopt-text"><strong>🌴 The Palm Tree</strong><small>Beachside bliss seeker</small></div></button>
-          <button class="qopt" data-val="adventure" onclick="pickQ(this)"><em>🚀</em><div class="qopt-text"><strong>🚀 The Rocket</strong><small>Thrill chaser</small></div></button>
-          <button class="qopt" data-val="explore" onclick="pickQ(this)"><em>🌊</em><div class="qopt-text"><strong>🌊 The Wave</strong><small>Free spirit explorer</small></div></button>
+          <button class="qopt" data-val="magic" onclick="pickQ(this)"><em>🏰</em><div class="qopt-text"><strong>Magical, enchanted & timeless</strong><small>Living inside a fairytale</small></div></button>
+          <button class="qopt" data-val="relax" onclick="pickQ(this)"><em>🌴</em><div class="qopt-text"><strong>Warm, breezy & totally carefree</strong><small>Pure bliss & no worries</small></div></button>
+          <button class="qopt" data-val="adventure" onclick="pickQ(this)"><em>🌊</em><div class="qopt-text"><strong>Epic, thrilling & non-stop fun</strong><small>Stories to tell forever</small></div></button>
+          <button class="qopt" data-val="explore" onclick="pickQ(this)"><em>🧭</em><div class="qopt-text"><strong>Curious, rich & eye-opening</strong><small>Changed by what you discover</small></div></button>
         </div>
       </div>
 
@@ -867,39 +867,38 @@ function spawnSparkles(x, y, count=6) {
 }
 document.addEventListener('click', e => spawnSparkles(e.clientX, e.clientY, 5));
 
-// ── FIREWORKS ENGINE ──
+// ── FIREWORKS ENGINE (UPGRADED) ──
 const canvas = document.getElementById('pyro-canvas');
 const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-window.addEventListener('resize', () => { canvas.width=window.innerWidth; canvas.height=window.innerHeight; });
+function resizeCanvas() { canvas.width=window.innerWidth; canvas.height=window.innerHeight; }
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
 
-const particles = [];
-const confetti = [];
+const particles = [], confetti = [], trails = [];
+const PALETTE = ['#C9A84C','#E8C96A','#fff','#8B7FCC','#ff6b9d','#00d4ff','#FFD700','#ff4757','#2ed573','#ffa502'];
 
 class Particle {
-  constructor(x, y, color) {
+  constructor(x, y, color, speed=8) {
     this.x=x; this.y=y;
-    this.vx=(Math.random()-0.5)*8;
-    this.vy=(Math.random()-0.5)*8 - 3;
-    this.alpha=1;
-    this.color=color;
+    const angle = Math.random()*Math.PI*2;
+    const s = (Math.random()*speed)+2;
+    this.vx=Math.cos(angle)*s;
+    this.vy=Math.sin(angle)*s - 2;
+    this.alpha=1; this.color=color;
     this.radius=Math.random()*3+1;
-    this.gravity=0.12;
+    this.gravity=0.1; this.decay=0.016;
   }
   update() {
     this.x+=this.vx; this.y+=this.vy;
     this.vy+=this.gravity;
-    this.alpha-=0.018;
-    this.vx*=0.98;
+    this.alpha-=this.decay;
+    this.vx*=0.98; this.vy*=0.99;
   }
   draw() {
-    ctx.save();
-    ctx.globalAlpha=Math.max(0,this.alpha);
+    ctx.save(); ctx.globalAlpha=Math.max(0,this.alpha);
+    ctx.shadowBlur=6; ctx.shadowColor=this.color;
     ctx.fillStyle=this.color;
-    ctx.beginPath();
-    ctx.arc(this.x,this.y,this.radius,0,Math.PI*2);
-    ctx.fill();
+    ctx.beginPath(); ctx.arc(this.x,this.y,this.radius,0,Math.PI*2); ctx.fill();
     ctx.restore();
   }
 }
@@ -907,103 +906,116 @@ class Particle {
 class Confetti {
   constructor(x, y) {
     this.x=x; this.y=y;
-    this.vx=(Math.random()-0.5)*6;
-    this.vy=Math.random()*-8-2;
+    this.vx=(Math.random()-0.5)*10;
+    this.vy=Math.random()*-12-3;
     this.alpha=1;
     this.rotation=Math.random()*360;
-    this.rotSpeed=(Math.random()-0.5)*8;
-    this.w=Math.random()*10+4;
-    this.h=Math.random()*5+2;
-    const palette=['#C9A84C','#E8C96A','#8B7FCC','#ff6b9d','#00d4ff','#ff4757','#2ed573','#fff'];
-    this.color=palette[Math.floor(Math.random()*palette.length)];
-    this.gravity=0.15;
+    this.rotSpeed=(Math.random()-0.5)*12;
+    this.w=Math.random()*12+4; this.h=Math.random()*6+2;
+    this.color=PALETTE[Math.floor(Math.random()*PALETTE.length)];
+    this.gravity=0.18; this.shape=Math.random()>0.5?'rect':'circle';
   }
   update() {
     this.x+=this.vx; this.y+=this.vy;
-    this.vy+=this.gravity;
-    this.alpha-=0.012;
-    this.rotation+=this.rotSpeed;
-    this.vx*=0.99;
+    this.vy+=this.gravity; this.alpha-=0.01;
+    this.rotation+=this.rotSpeed; this.vx*=0.99;
   }
   draw() {
-    ctx.save();
-    ctx.globalAlpha=Math.max(0,this.alpha);
-    ctx.translate(this.x,this.y);
-    ctx.rotate(this.rotation*Math.PI/180);
+    ctx.save(); ctx.globalAlpha=Math.max(0,this.alpha);
+    ctx.translate(this.x,this.y); ctx.rotate(this.rotation*Math.PI/180);
     ctx.fillStyle=this.color;
-    ctx.fillRect(-this.w/2,-this.h/2,this.w,this.h);
+    if(this.shape==='circle'){ctx.beginPath();ctx.arc(0,0,this.w/2,0,Math.PI*2);ctx.fill();}
+    else{ctx.fillRect(-this.w/2,-this.h/2,this.w,this.h);}
     ctx.restore();
   }
 }
 
-function burst(x, y, count=80, withConfetti=true) {
-  const colors=['#C9A84C','#E8C96A','#fff','#8B7FCC','#ff6b9d','#00d4ff','#FFD700','#ff4757'];
-  for(let i=0;i<count;i++) particles.push(new Particle(x,y,colors[Math.floor(Math.random()*colors.length)]));
-  if(withConfetti) for(let i=0;i<60;i++) confetti.push(new Confetti(x,y));
+class Trail {
+  constructor(x,y,color){
+    this.x=x;this.y=y;this.color=color;
+    this.alpha=0.8;this.radius=Math.random()*4+2;
+  }
+  update(){this.alpha-=0.05;this.radius*=0.92;}
+  draw(){
+    ctx.save();ctx.globalAlpha=Math.max(0,this.alpha);
+    ctx.fillStyle=this.color;
+    ctx.beginPath();ctx.arc(this.x,this.y,this.radius,0,Math.PI*2);ctx.fill();
+    ctx.restore();
+  }
 }
 
-let pyroActive=false;
+function burst(x, y, count=80, withConfetti=true, speed=8) {
+  for(let i=0;i<count;i++) particles.push(new Particle(x,y,PALETTE[Math.floor(Math.random()*PALETTE.length)],speed));
+  if(withConfetti) for(let i=0;i<70;i++) confetti.push(new Confetti(x,y));
+}
+
+// Rocket that shoots up then bursts
+function rocket(x, targetY) {
+  const color = PALETTE[Math.floor(Math.random()*PALETTE.length)];
+  let cy = window.innerHeight, speed = 12;
+  const interval = setInterval(()=>{
+    trails.push(new Trail(x + (Math.random()-0.5)*4, cy, color));
+    cy -= speed;
+    if(cy <= targetY) { clearInterval(interval); burst(x, cy, 100, true, 10); animatePyro(); }
+  }, 16);
+}
+
+let pyroActive=false, animId=null;
 function animatePyro() {
-  if(!pyroActive && particles.length===0 && confetti.length===0) return;
-  requestAnimationFrame(animatePyro);
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  for(let i=particles.length-1;i>=0;i--) {
-    particles[i].update(); particles[i].draw();
-    if(particles[i].alpha<=0) particles.splice(i,1);
+  if(animId) return;
+  pyroActive=true;
+  function loop() {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    const all = [particles,confetti,trails];
+    all.forEach(arr=>{
+      for(let i=arr.length-1;i>=0;i--){
+        arr[i].update(); arr[i].draw();
+        if(arr[i].alpha<=0) arr.splice(i,1);
+      }
+    });
+    if(particles.length||confetti.length||trails.length){ animId=requestAnimationFrame(loop); }
+    else { pyroActive=false; animId=null; }
   }
-  for(let i=confetti.length-1;i>=0;i--) {
-    confetti[i].update(); confetti[i].draw();
-    if(confetti[i].alpha<=0) confetti.splice(i,1);
-  }
-  if(particles.length===0 && confetti.length===0) pyroActive=false;
+  animId=requestAnimationFrame(loop);
 }
 
 function launchFireworks(e) {
-  pyroActive=true;
   const rect = e.currentTarget ? e.currentTarget.getBoundingClientRect() : null;
-  if(rect) {
-    const cx = rect.left + rect.width/2;
-    const cy = rect.top + rect.height/2;
-    burst(cx, cy, 100, true);
-    // Also launch from a random second position
-    setTimeout(()=>burst(Math.random()*window.innerWidth*0.8+window.innerWidth*0.1, Math.random()*window.innerHeight*0.5, 70, true), 180);
-  } else {
-    const x = (e.clientX||window.innerWidth/2);
-    const y = (e.clientY||window.innerHeight/2);
-    burst(x, y, 100, true);
-  }
+  const x = rect ? rect.left+rect.width/2 : (e.clientX||window.innerWidth/2);
+  const y = rect ? rect.top+rect.height/2 : (e.clientY||window.innerHeight/2);
+  burst(x, y, 120, true);
+  setTimeout(()=>rocket(x+(Math.random()-0.5)*200, y-80), 200);
   animatePyro();
 }
 
-// Multi-zone fireworks
 function launchMultiZone() {
-  pyroActive=true;
-  const zones=[[window.innerWidth*0.15,window.innerHeight*0.35],[window.innerWidth*0.5,window.innerHeight*0.25],[window.innerWidth*0.85,window.innerHeight*0.35],[window.innerWidth*0.3,window.innerHeight*0.6],[window.innerWidth*0.7,window.innerHeight*0.6]];
-  zones.forEach((z,i)=>setTimeout(()=>burst(z[0],z[1],90,true),i*220));
-  animatePyro();
+  const W=window.innerWidth, H=window.innerHeight;
+  const zones=[[W*.15,H*.3],[W*.5,H*.2],[W*.85,H*.3],[W*.3,H*.55],[W*.7,H*.55]];
+  zones.forEach((z,i)=>{
+    setTimeout(()=>{ burst(z[0],z[1],100,true); animatePyro(); }, i*280);
+    setTimeout(()=>rocket(z[0],z[1]-60), i*280+100);
+  });
 }
 
-// Hero buttons fireworks
+// Hero buttons
 document.querySelectorAll('.spark-zone').forEach(el => {
   el.addEventListener('click', e => {
-    const zone = el.dataset.zone;
-    pyroActive=true;
-    if(zone==='hero-left') {
-      burst(window.innerWidth*0.25, window.innerHeight*0.5, 90, true);
-      setTimeout(()=>burst(window.innerWidth*0.1, window.innerHeight*0.4, 60, true), 250);
-    } else if(zone==='hero-right') {
-      burst(window.innerWidth*0.75, window.innerHeight*0.5, 90, true);
-      setTimeout(()=>burst(window.innerWidth*0.9, window.innerHeight*0.4, 60, true), 250);
-    }
+    const W=window.innerWidth,H=window.innerHeight;
+    const zone=el.dataset.zone;
+    if(zone==='hero-left'){ burst(W*.25,H*.5,100,true); rocket(W*.15,H*.3); }
+    else { burst(W*.75,H*.5,100,true); rocket(W*.85,H*.3); }
     animatePyro();
   });
 });
 
-// Quiz result triggers fireworks
-function quizResultFireworks() {
-  pyroActive=true;
-  launchMultiZone();
-}
+// Double-click anywhere for big fireworks
+document.addEventListener('dblclick', e => {
+  burst(e.clientX, e.clientY, 140, true, 10);
+  rocket(e.clientX, e.clientY - 100);
+  animatePyro();
+});
+
+function quizResultFireworks() { launchMultiZone(); }
 
 // ── SCROLL REVEAL ──
 const reveals=document.querySelectorAll('.reveal');
